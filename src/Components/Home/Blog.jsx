@@ -1,5 +1,5 @@
 import React from "react";
-import brockly from "../../assets/Svg/brockly.svg";
+import brockly from "../../assets/images/brockly.png";
 
 const Blogs = () => {
   const arr = [
