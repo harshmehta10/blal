@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: inter, sans-serif;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px; /* Scrollbar width */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #dee2db96; /* Track color */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #0d6d58; /* Green thumb color */
+  border-radius: 9999px; /* Rounded corners */
+  border: 2px solid #f1f1f1; /* Optional white border */
+}
+
+.text-40 {
+  @apply text-lg md:text-3xl lg:text-[40px];
+}
