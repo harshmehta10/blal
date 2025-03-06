@@ -1,7 +1,7 @@
 import React from "react";
 import brockly from "../../assets/Svg/brockly.svg";
 
-const Blog = () => {
+const Blogs = () => {
   const arr = [
     {
       icon: brockly,
@@ -98,4 +98,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Blogs;
