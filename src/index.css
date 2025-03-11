@@ -19,5 +19,19 @@
 }
 
 .text-40 {
-  @apply text-lg md:text-3xl lg:text-[40px];
+  @apply text-2xl md:text-3xl lg:text-[40px];
+}
+
+@keyframes fill {
+  0% {
+    background-size: 0% 100%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+.animate-fill {
+  animation: fill 0.5s forwards;
+  background-size: 100% 100%;
 }

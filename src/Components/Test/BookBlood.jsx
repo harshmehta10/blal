@@ -48,7 +48,7 @@ const BookBlood = () => {
   ];
   return (
     <div>
-      <div className=" mx-auto bg-[#01635A]  px-5 py-5 rounded-2xl space-y-5">
+      <div className="max-w-screen-2xl mx-auto bg-[#01635A]  px-5 py-5 rounded-2xl space-y-5">
         <h1 className="text-white font-inter font-medium text-base lg:text-lg  max-w-[431px]">
           Book Blood Group ABO & RH Factor (Blood Grouping) Test at Home in
           Bangalore + Reports in 6 Hours

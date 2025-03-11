@@ -8,8 +8,8 @@ import Fullbody from "../../../Components/Test/Fullbody";
 
 const Test = () => {
   return (
-    <div className="bg-[#F1F6EE]  ">
-      <div className="flex flex-col lg:flex-row gap-10 w-full  mx-auto  px-8">
+    <div className="max-w-screen-2xl mx-auto bg-[#F1F6EE]  ">
+      <div className="flex flex-col lg:flex-row lg:justify-between w-full  mx-auto  px-8">
         <div className="py-4 max-w-[570px] space-y-6">
           <BookBlood />
           <TestFaq />

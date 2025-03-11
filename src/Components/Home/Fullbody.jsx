@@ -1,18 +1,41 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import dropdown from "../../assets/Svg/dropdown.svg";
 import vital from "../../assets/Svg/vitalpackage.svg";
 import complete from "../../assets/Svg/completepackage.svg";
 import premium from "../../assets/Svg/premiumpackage.svg";
 import arrowright from "../../assets/Svg/rightwhitearr.svg";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import vector from "../../assets/Svg/vector.svg";
 import dot from "../../assets/Svg/dot.svg";
 import prev from "../../assets/Svg/prev.svg";
 import next from "../../assets/Svg/next.svg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const Fullbody = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const keywords = ["Alpha", "Bravo", "Charlie", "Delta", "Echo"];
+  const dropdownRef = useRef(null);
+
+  // Toggle dropdown open/close
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  const [focusedIndex, setFocusedIndex] = useState(null);
   const Checkup = [
     {
       icon: complete,
@@ -51,34 +74,101 @@ const Fullbody = () => {
       bullet: dot,
     },
   ];
+  const sliderRef = useRef(null);
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 6, // Adjusted for two items; update if you add more tests
+    slidesToScroll: 2,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 0,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <>
-      <div className=" mx-auto px-8 py-16 space-y-10 overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto px-10 py-16 space-y-10 overflow-hidden">
         <div className=" flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0">
           <h1 className="font-inter font-medium text-xl lg:text-[40px] text-[#004039] ">
             Full Body Checkup Packages
           </h1>
-          <div className="flex border border-[#004039] py-3 px-4 rounded-[8px] lg:gap-5 justify-between">
-            <button className="text-[#004039] font-inter font-normal text-sm lg:text-base">
-              Suraksha Packages
-            </button>
-            <img src={dropdown} alt="" />
+          <div className="relative inline-block z-[999]" ref={dropdownRef}>
+            <div
+              className="flex border border-[#004039] py-3 px-4 rounded-[8px] lg:gap-5 justify-between cursor-pointer"
+              onClick={toggleDropdown}
+            >
+              <button className="text-[#004039] font-inter font-normal text-sm lg:text-base">
+                Suraksha Packages
+              </button>
+              <img
+                src={dropdown}
+                alt="dropdown icon"
+                className={`transition-transform duration-300 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+              />
+            </div>
+            {isOpen && (
+              <div className="absolute mt-2 w-full bg-white border border-[#004039] rounded-[8px] shadow-lg">
+                <ul className="py-2">
+                  {keywords.map((keyword, index) => (
+                    <li
+                      key={index}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    >
+                      {keyword}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
-        <div className="flex  gap-5">
+        <div className="flex gap-5">
           {Checkup.map((item, index) => (
-            <div key={index} className=" rounded-[12px]  border">
-              <div className="relative bg-[F1F6EE] w-[440px]">
+            <div
+              key={index}
+              tabIndex={0} // Makes the div focusable
+              onMouseEnter={() => setFocusedIndex(index)}
+              onMouseLeave={() => setFocusedIndex(null)}
+              onFocus={() => setFocusedIndex(index)}
+              onBlur={() => setFocusedIndex(null)}
+              className={`rounded-[12px] border transition-all duration-300 transform overflow-hidden ${
+                focusedIndex === index
+                  ? "scale-105"
+                  : focusedIndex !== null
+                  ? "filter blur-xs scale-95"
+                  : ""
+              }`}
+            >
+              <div className="relative bg-[#F1F6EE] w-[440px]">
                 <img src={vector} alt="" className="absolute inset-8 left-14" />
-                <div className="relative z-[999] h-[250px] ">
-                  <img src={item.icon} alt="" className="absolute top-5 " />
+                <div className="relative z-[999] h-[250px]">
+                  <img src={item.icon} alt="" className="absolute top-5" />
                 </div>
               </div>
               <div className="bg-[#01635A] py-6 space-y-6 rounded-b-[12px] px-4 relative z-[999]">
@@ -96,9 +186,9 @@ const Fullbody = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex justify-between ">
+                  <div className="flex justify-between">
                     <div className="flex gap-2 items-center">
-                      <img src={item.bullet} alt="" className="" />
+                      <img src={item.bullet} alt="" />
                       <p className="text-[#E1FBA6] text-base font-inter font-normal">
                         {item.para}
                       </p>
@@ -110,17 +200,25 @@ const Fullbody = () => {
                 </div>
                 <div className="space-y-5">
                   <div className="flex justify-between">
-                    <div className="flex px-2.5 py-2 gap-2.5 border border-white rounded-[8px]">
-                      <button className="text-white font-inter text-base font-medium ">
+                    <div className="flex px-2.5 py-2 gap-2.5 border border-white rounded-lg group">
+                      <button className="text-white font-inter text-base font-medium">
                         {item.btn}
                       </button>
-                      <img src={item.arrow} alt="" />
+                      <img
+                        src={item.arrow}
+                        alt="arrow"
+                        className="group-hover:translate-x-0.5 transition-all duration-300"
+                      />
                     </div>
-                    <div className="flex gap-2.5 bg-[#68B92E] rounded-[8px] py-2 px-5 items-center">
+                    <div className="flex gap-2.5 bg-[#68B92E] rounded-[8px] py-2 px-5 items-center group">
                       <button className="font-inter font-medium text-white text-base">
                         {item.cart}
                       </button>
-                      <img src={item.arrow} alt="" className="" />
+                      <img
+                        src={item.arrow}
+                        alt="arrow"
+                        className="group-hover:translate-x-1 transition-all duration-300"
+                      />
                     </div>
                   </div>
                 </div>
@@ -128,15 +226,26 @@ const Fullbody = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-between items-center">
-          <div className="hidden lg:block"></div>
-          <button className="text-white bg-[#68B92E] py-4 px-8 rounded-[12px] text-xs lg:text-base">
+        <div className="relative flex items-center justify-center">
+          <button className="bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 py-4 px-8 text-white font-medium rounded-xl cursor-pointer">
             View All Packages
           </button>
-          <div className="flex gap-5 lg:gap-8">
-            <img src={prev} alt="" />
-            <img src={next} alt="" />
-          </div>
+
+          {/* Arrow controls positioned to the right */}
+          {/* <div className="absolute right-0 flex gap-5 lg:gap-8">
+            <div
+              onClick={() => sliderRef.current.slickPrev()}
+              className="cursor-pointer"
+            >
+              <img src={prev} alt="prev arrow" className="w-10" />
+            </div>
+            <div
+              onClick={() => sliderRef.current.slickNext()}
+              className="cursor-pointer"
+            >
+              <img src={next} alt="next arrow" className="w-10" />
+            </div>
+          </div> */}
         </div>
       </div>
     </>

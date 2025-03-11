@@ -49,7 +49,7 @@ const BloodCount = () => {
   ];
   return (
     <div>
-      <div className="px-8 py-9  bg-white border border-[#DEE2DB] rounded-xl space-y-10 ">
+      <div className="max-w-screen-2xl mx-auto px-8 py-9  bg-white border border-[#DEE2DB] rounded-xl space-y-10 ">
         <h1 className="font-inter font-medium text-2xl">
           Complete Blood Count (CBC)
         </h1>

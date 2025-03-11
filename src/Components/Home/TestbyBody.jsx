@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import kidney from "../../assets/Svg/kidney.svg";
 import heart from "../../assets/Svg/heart.svg";
 import { Link } from "react-router";
@@ -9,6 +9,7 @@ import prev from "../../assets/Svg/prev.svg";
 import next from "../../assets/Svg/next.svg";
 
 const TestbyBody = () => {
+  const [focusedIndex, setFocusedIndex] = useState(null);
   const sliderRef = useRef(null);
   const settings = {
     dots: false,
@@ -85,7 +86,21 @@ const TestbyBody = () => {
         <div className="">
           <Slider ref={sliderRef} {...settings}>
             {test.map((testItem, index) => (
-              <div key={index} className="px-2">
+              <div
+                key={index}
+                tabIndex={0} // Makes the div focusable
+                onMouseEnter={() => setFocusedIndex(index)}
+                onMouseLeave={() => setFocusedIndex(null)}
+                onFocus={() => setFocusedIndex(index)}
+                onBlur={() => setFocusedIndex(null)}
+                className={`px-2 transition-all duration-300 transform overflow-hidden ${
+                  focusedIndex === index
+                    ? "scale-100"
+                    : focusedIndex !== null
+                    ? "filter blur-xs scale-90"
+                    : ""
+                }`}
+              >
                 <div
                   className={` ${
                     index % 2 === 0 ? "py-7.5 px-8.5 " : "py-7 px-8.5"
@@ -106,16 +121,20 @@ const TestbyBody = () => {
             ))}
           </Slider>
         </div>
-        <div className="flex justify-between ">
-          <div className="hidden lg:block"></div>
-          <div>
-            <Link to="/tet">
-              <button className="bg-[#68B92E] py-4 px-8 text-white font-medium rounded-xl">
-                View All Tests
-              </button>
-            </Link>
-          </div>
-          <div className="flex gap-5 lg:gap-8">
+        <div className="relative flex items-center lg:justify-center">
+          <Link
+            to="/tet"
+            onClick={() =>
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+            }
+          >
+            <button className="bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 py-4 px-8 text-white font-medium rounded-xl cursor-pointer">
+              View All Tests
+            </button>
+          </Link>
+
+          {/* Arrow controls positioned to the right */}
+          <div className="absolute right-0 flex gap-5 lg:gap-8">
             <div
               onClick={() => sliderRef.current.slickPrev()}
               className="cursor-pointer"

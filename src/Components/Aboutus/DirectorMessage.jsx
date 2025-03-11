@@ -29,7 +29,7 @@ const DirectorMessage = () => {
                 care services.
               </p>
             </div>
-            <button className="font-inter font-medium text-sm lg:text-base text-white rounded-xl py-4 px-8 bg-gradient-to-b to-[#3B9D00] from-[#46BB00]  shadow-2xl">
+            <button className="font-inter font-medium text-sm lg:text-base text-white rounded-xl py-4 px-8 bg-gradient-to-b to-[#3B9D00] from-[#46BB00]  hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 shadow-2xl cursor-pointer">
               Learn More
             </button>
           </div>

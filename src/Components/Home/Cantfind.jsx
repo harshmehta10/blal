@@ -7,7 +7,8 @@ const Cantfind = () => {
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-8 py-8 overflow-hidden">
-        <div className="relative  bg-gradient-to-b to-[#B7FA36] from-[#01635A] px-10 py-12 rounded-2xl overflow-hidden">
+        <div className="relative  bg-[#01635A] px-10 py-12 rounded-2xl overflow-hidden">
+          <div className="bg-gradient-to-br from-[#B7FA36]/0 from-40% to-[#B7FA36] opacity-50 absolute w-full h-full inset-0"></div>
           <div className="w-full h-full absolute z-[999] inset-0 ">
             <img src={bgflim} alt="" className="w-full h-full object-cover" />
           </div>

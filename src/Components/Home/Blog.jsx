@@ -38,7 +38,7 @@ const Blogs = () => {
   ];
   return (
     <>
-      <div className=" mx-auto px-8 py-7 space-y-14">
+      <div className="max-w-screen-2xl mx-auto px-8 py-7 space-y-14">
         <div className="flex flex-col items-center justify-center space-y-14 ">
           <h1 className="text-[#004039] font-inter font-medium text-40 text-center max-w-[766px]">
             Blogs ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -89,8 +89,8 @@ const Blogs = () => {
           ))}
         </div>
         <div className=" flex justify-center">
-          <button className="bg-[#68B92E] text-white font-inter font-medium text-base py-4 px-8 rounded-xl">
-            View All Blogs
+          <button className=" bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500   text-white font-inter font-medium text-base py-4 px-8 rounded-xl cursor-pointer">
+            <p>View All Blogs</p>
           </button>
         </div>
       </div>

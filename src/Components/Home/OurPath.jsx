@@ -5,7 +5,7 @@ import smwhite from "../../assets/Svg/smwhiterr.svg";
 const OurPath = () => {
   return (
     <div>
-      <div className=" mx-auto px-8 py-7 space-y-14.5">
+      <div className="max-w-screen-2xl mx-auto px-8 py-7 space-y-14.5">
         <div className="flex justify-center text-center ">
           <h1 className="text-[#004039] font-inter font-medium text-40 max-w-[766px]">
             Our Path to Excellence in Healthcare Spanning Cities & Milestones
@@ -16,33 +16,41 @@ const OurPath = () => {
             <div>
               <img src={journey} alt="" className="object-cover w-full" />
             </div>
-            <div className="bg-[#01635A] space-y-5 px-10 py-7.5 rounded-b-2xl">
-              <h1 className=" text-[#E1FBA6] font-inter font-medium text-2xl lg:text-[32px]">
+            <div className="bg-[#01635A] space-y-5 px-10 py-7.5 rounded-b-2xl relative overflow-hidden">
+              <div className="bg-linear-240 from-[#46BB00]/0 from-0% via-[#46BB00] via-50% opacity-50 to-[#46BB00]/0 to-100%   absolute w-full h-full inset-0"></div>
+              <h1 className=" text-[#E1FBA6] font-inter font-medium text-2xl lg:text-[32px] relative z-50">
                 Our Journey
               </h1>
-              <p className="max-w-[565px] text-white font-inter font-normal text-sm lg:text-lg">
+              <p className="max-w-[565px] text-white font-inter font-normal text-sm lg:text-lg relative z-50">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore quis amet lorem solor quilei
                 sit consectrum elit sue lorem ipsum dolor sit amet, consectetur
                 adipiscing elit, sed do eiusmod
               </p>
-              <div className="bg-[#68B92E] flex px-8 py-4 rounded-xl gap-2.5 w-[166px]">
-                <button className="text-white">Learn More</button>
-                <img src={smwhite} alt="" />
+              <div className="group flex bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 cursor-pointer  px-4 lg:px-8 py-3 lg:py-4 rounded-xl gap-4 lg:gap-2.5 w-[150px] lg:w-[166px] relative z-50 ">
+                <button className="text-white cursor-pointer">
+                  Learn More
+                </button>
+                <img
+                  src={smwhite}
+                  alt="arrow"
+                  className="group-hover:translate-x-1 transition-all duration-300"
+                />
               </div>
             </div>
           </div>
-          <div className="space-y-6 w-full lg:w-1/2">
-            <div className="bg-[#01635A] px-10 py-9 rounded-2xl space-y-6">
-              <h1 className="text-[#E1FBA6] font-inter font-medium text-2xl lg:text-[32px]">
+          <div className="space-y-6 w-full lg:w-1/2 flex flex-col justify-between">
+            <div className="bg-[#01635A] px-10 py-9 rounded-2xl space-y-6 relative overflow-hidden">
+              <div className="bg-linear-240 from-[#46BB00]/0 from-0% via-[#46BB00] via-50% opacity-50 to-[#46BB00]/0 to-100%   absolute w-full h-full inset-0"></div>
+              <h1 className="text-[#E1FBA6] font-inter font-medium text-2xl lg:text-[32px] relative z-50">
                 A Legacy Of Excellence
               </h1>
-              <p className="text-white font-inter font-normal text-sm lg:text-lg max-w-[565px]">
+              <p className="text-white font-inter font-normal text-sm lg:text-lg max-w-[565px] relative z-50">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore quis amet lorem solor quilei
                 sit consectrum elit sue
               </p>
-              <div className="flex flex-col lg:flex-row gap-10">
+              <div className="flex flex-col lg:flex-row gap-10 relative z-50">
                 <div>
                   <p className="text-[#E1FBA6] font-inter font-bold text-sm lg:text-lg">
                     31+
@@ -69,45 +77,56 @@ const OurPath = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[#01635A] px-10 py-9 rounded-2xl  space-y-6">
-              <h1 className="text-[#E1FBA6] font-inter font-medium text-2xl lg:text-[32px]">
+            <div className="bg-[#01635A] relative   px-10 py-9 rounded-2xl  space-y-6 overflow-hidden">
+              <div className="bg-linear-240 from-[#46BB00]/0 from-0% via-[#46BB00] via-50% opacity-50 to-[#46BB00]/0 to-100%   absolute w-full h-full inset-0"></div>
+              <h1 className="text-[#E1FBA6] font-inter font-medium text-2xl lg:text-[32px] relative z-50">
                 How it works?
               </h1>
-              <p className="text-white font-inter font-normal text-sm lg:text-lg max-w-[565px]">
+              <p className="text-white font-inter font-normal text-sm lg:text-lg max-w-[565px] relative z-50">
                 Lorem ipsum dolor sit amet, consectetur adipis elit, sed do
                 eiusmod tempor incididunt
               </p>
-              <div className="flex flex-col lg:flex-row gap-10">
+              <div className="flex flex-col lg:flex-row gap-10 relative z-50">
                 <div className="flex gap-2 items-center">
-                  <h1 className="text-[#125A2D] font-inter font-medium text-xs lg:text-lg bg-[#E1FBA6] py-1 px-2 rounded-[72px] ">
-                    1
-                  </h1>
+                  <div className="bg-[#E1FBA6] size-7 rounded-[72px] flex justify-center items-center">
+                    <h1 className="text-[#125A2D] font-inter font-medium text-xs lg:text-lg  ">
+                      1
+                    </h1>
+                  </div>
                   <p className="text-white font-inter  font-normal text-sm lg:text-lg">
                     Select tests
                   </p>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <h1 className="text-[#125A2D] font-inter font-medium text-xs lg:text-base bg-[#E1FBA6] py-1 px-2 rounded-[72px]">
-                    2
-                  </h1>
+                  <div className="bg-[#E1FBA6] size-7 rounded-[72px] flex justify-center items-center">
+                    <h1 className="text-[#125A2D] font-inter font-medium text-xs lg:text-lg  ">
+                      2
+                    </h1>
+                  </div>
                   <p className="text-white font-inter  font-normal text-sm lg:text-lg">
                     Add your details
                   </p>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <h1 className="text-[#125A2D] font-inter font-medium text-xs lg:text-base bg-[#E1FBA6] py-1 px-2 rounded-[72px]">
-                    3
-                  </h1>
+                  <div className="bg-[#E1FBA6] size-7 rounded-[72px] flex justify-center items-center">
+                    <h1 className="text-[#125A2D] font-inter font-medium text-xs lg:text-lg  ">
+                      3
+                    </h1>
+                  </div>
                   <p className="text-white font-inter  font-normal text-sm lg:text-lg">
                     Book your slot
                   </p>
                 </div>
               </div>
-              <div className="flex bg-[#68B92E] px-4 lg:px-8 py-3 lg:py-4 rounded-xl gap-4 lg:gap-2.5 w-[150px] lg:w-[166px]">
-                <button className="text-white text-sm lg:text-base">
+              <div className="group flex bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 cursor-pointer  px-4 lg:px-8 py-3 lg:py-4 rounded-xl gap-4 lg:gap-2.5 w-[150px] lg:w-[166px] relative z-50 ">
+                <button className="text-white text-sm lg:text-base cursor-pointer ">
                   Order now
                 </button>
-                <img src={smwhite} alt="" />
+                <img
+                  src={smwhite}
+                  alt="arrow"
+                  className="group-hover:translate-x-1 transition-all duration-300"
+                />
               </div>
             </div>
           </div>

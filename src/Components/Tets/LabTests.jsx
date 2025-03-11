@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const LabTests = () => {
   // Pagination setup
-  const totalTests = 201;
+  const totalTests = 60;
   const itemsPerPage = 12;
   const totalPages = Math.ceil(totalTests / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,10 +19,10 @@ const LabTests = () => {
   );
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-12 py-12">
-      <div className="flex gap-6">
+    <div className="max-w-screen-2xl mx-auto px-6 lg:px-12 py-12">
+      <div className="flex flex-col lg:flex-row gap-6">
         {/* Left Sidebar: Filters */}
-        <div className="w-1/4 bg-white border rounded-md p-4 h-1/2 space-y-5">
+        <div className="w-full lg:w-1/4 bg-white border rounded-md p-4 h-1/2 space-y-5">
           <h2 className="text-xl font-semibold mb-4">Filters</h2>
 
           {/* Search box */}
@@ -36,10 +36,10 @@ const LabTests = () => {
 
           {/* Body Parts */}
           <div className="">
-            <h3 className="text-md font-medium mb-2">Body Parts</h3>
+            <h3 className="text-base font-medium mb-2">Body Parts</h3>
             <div className="overflow-y-scroll custom-scrollbar max-h-48">
               <div className="flex items-center mb-2 gap-2">
-                <input type="checkbox" id="heart" className="bg-[#01635A]" />
+                <input type="checkbox" id="heart1" className="bg-[#01635A]" />
                 <label
                   htmlFor="heart"
                   className="font-inter font-normal text-base text-[#7C7C7C]"
@@ -48,7 +48,7 @@ const LabTests = () => {
                 </label>
               </div>
               <div className="flex items-center mb-2 gap-2">
-                <input type="checkbox" id="heart" className="" />
+                <input type="checkbox" id="heart2" className="" />
                 <label
                   htmlFor="heart"
                   className="font-inter font-normal text-base text-[#7C7C7C]"
@@ -57,7 +57,7 @@ const LabTests = () => {
                 </label>
               </div>
               <div className="flex items-center mb-2 gap-2">
-                <input type="checkbox" id="heart" className="" />
+                <input type="checkbox" id="heart3" className="" />
                 <label
                   htmlFor="heart"
                   className="font-inter font-normal text-base text-[#7C7C7C]"
@@ -66,7 +66,7 @@ const LabTests = () => {
                 </label>
               </div>
               <div className="flex items-center mb-2 gap-2">
-                <input type="checkbox" id="heart" className="" />
+                <input type="checkbox" id="heart4" className="" />
                 <label
                   htmlFor="heart"
                   className="font-inter font-normal text-base text-[#7C7C7C]"
@@ -183,7 +183,7 @@ const LabTests = () => {
               <div className="flex items-center mb-2">
                 <input
                   type="checkbox"
-                  id="infectious"
+                  id="infectious1"
                   className="mr-2 border border-[#DEE2DB]"
                 />
                 <label
@@ -196,7 +196,7 @@ const LabTests = () => {
               <div className="flex items-center mb-2">
                 <input
                   type="checkbox"
-                  id="infectious"
+                  id="infectious2"
                   className="mr-2 border border-[#DEE2DB]"
                 />
                 <label
@@ -209,11 +209,11 @@ const LabTests = () => {
               <div className="flex items-center mb-2">
                 <input
                   type="checkbox"
-                  id="infectious"
+                  id="infectious3"
                   className="mr-2 border border-[#DEE2DB]"
                 />
                 <label
-                  htmlFor="infectious"
+                  htmlFor="infectious4"
                   className="font-inter font-normal text-base text-[#7C7C7C]"
                 >
                   Infectious
@@ -233,9 +233,14 @@ const LabTests = () => {
           </p>
 
           {/* Grid of Test Cards */}
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
             {currentItems.map((_, index) => (
-              <Link to="/testspage">
+              <Link
+                to="/testspage"
+                onClick={() =>
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+                }
+              >
                 <Fullbody key={index} />
               </Link>
             ))}

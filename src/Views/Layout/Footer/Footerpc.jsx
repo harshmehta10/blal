@@ -119,7 +119,12 @@ const Footerpc = () => {
             {about.map((item, index) => (
               <div key={index} className="space-y-6 font-inter">
                 <div>
-                  <Link to="/aboutus">
+                  <Link
+                    to="/aboutus"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+                    }
+                  >
                     <h1 className="text-[#E1FBA6] font-inter font-medium text-base">
                       {item.heading}
                     </h1>

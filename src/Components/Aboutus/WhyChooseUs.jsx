@@ -1,5 +1,5 @@
 import React from "react";
-import doc from "../../assets/images/doc.png";
+import doc from "../../assets/images/aboutusdoc.png";
 import bg from "../../assets/Svg/bg.svg";
 
 const WhyChooseUs = () => {
@@ -8,18 +8,18 @@ const WhyChooseUs = () => {
       {/* Main row: left image(s) + right text */}
       <div className="flex items-center justify-between gap-8">
         {/* LEFT SIDE: Doctor image with background shape */}
-        <div className="relative w-3/4 h-[500px] overflow-y-hidden">
+        <div className="relative w-3/4 h-[500px]">
           {/* The SVG shape behind */}
           <img
             src={bg}
             alt="background shape"
-            className="absolute top-20 -left-24 w-full h-[75%] object-contain"
+            className="absolute top-24 -left-10 w-full h-[80%] "
           />
           {/* The doctor image in front */}
           <img
             src={doc}
             alt="doctor"
-            className="absolute -top-12 -left-16 w-full h-full object-contain"
+            className="absolute -top-1 left-3 w-[95%] h-full object-contain"
           />
         </div>
 
@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
             amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut labore.
           </p>
-          <button className="rounded-xl py-4 px-8 bg-gradient-to-b from-[#46BB00] to-[#3B9D00] font-inter font-medium text-white text-sm lg:text-base shadow-2xl">
+          <button className="rounded-xl py-4 px-8  font-inter font-medium text-white text-sm lg:text-base bg-gradient-to-b from-[#46BB00] to-[#3B9D00]  hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 shadow-2xl cursor-pointer">
             Book Lab Test
           </button>
         </div>
