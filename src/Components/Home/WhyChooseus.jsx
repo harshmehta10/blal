@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import bgflim from "../../assets/Svg/bgflim.svg";
 import chooseus from "../../assets/images/chooseus.png";
 import whitemicro from "../../assets/Svg/whitemicro.svg";
@@ -11,6 +11,7 @@ import prev from "../../assets/Svg/prevblack.svg";
 import next from "../../assets/Svg/nextblack.svg";
 
 const WhyChooseus = () => {
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const us = [1, 2, 3, 4, 5, 6, 7, 8];
   const patient = [
     {
@@ -43,12 +44,17 @@ const WhyChooseus = () => {
               consectetur adipiscing elit elit sed do eiusmod.
             </p>
           </div>
-          <div className="flex flex-col lg:flex-row justify-between">
-            <div className="space-y-6 ">
+          <div className="flex flex-col lg:flex-row justify-between items-center w-full">
+            <div className="space-y-6  ">
               {patient.map((item, index) => (
                 <div
                   key={index}
-                  className="flex bg-[#68B92E]/5 py-5 pr-2.5 pl-6 border border-[#68B92E] gap-6 rounded-lg"
+                  onClick={() => setSelectedIndex(index)}
+                  className={`flex py-5 pr-2.5 pl-6 gap-6 rounded-lg cursor-pointer ${
+                    selectedIndex === index
+                      ? "bg-[#68B92E]/5 border border-[#68B92E]"
+                      : "bg-white"
+                  }`}
                 >
                   <img src={item.icon} alt="" />
                   <div className="space-y-2">
@@ -62,7 +68,7 @@ const WhyChooseus = () => {
                 </div>
               ))}
             </div>
-            <div className="relative py-2">
+            <div className="relative ">
               <img src={mac} alt="macbook" />
               <div className="flex absolute bottom-5 right-5 gap-5">
                 <img

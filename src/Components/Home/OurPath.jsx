@@ -28,7 +28,7 @@ const OurPath = () => {
                 adipiscing elit, sed do eiusmod
               </p>
               <div className="group flex bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 cursor-pointer  px-4 lg:px-8 py-3 lg:py-4 rounded-xl gap-4 lg:gap-2.5 w-[150px] lg:w-[166px] relative z-50 ">
-                <button className="text-white cursor-pointer">
+                <button className="text-white cursor-pointer font-inter font-medium whitespace-nowrap">
                   Learn More
                 </button>
                 <img
@@ -118,8 +118,9 @@ const OurPath = () => {
                   </p>
                 </div>
               </div>
+
               <div className="group flex bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 cursor-pointer  px-4 lg:px-8 py-3 lg:py-4 rounded-xl gap-4 lg:gap-2.5 w-[150px] lg:w-[166px] relative z-50 ">
-                <button className="text-white text-sm lg:text-base cursor-pointer ">
+                <button className="text-white text-sm lg:text-base cursor-pointer font-inter ">
                   Order now
                 </button>
                 <img

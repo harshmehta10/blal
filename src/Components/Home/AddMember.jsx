@@ -7,8 +7,8 @@ import bgflim from "../../assets/Svg/bgflim.svg";
 const AddMember = () => {
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto px-8 py-12">
-        <div className=" bg-[#01635A] px-20 rounded-2xl relative py-5 overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto px-8 py-20">
+        <div className=" bg-[#01635A] px-28 rounded-2xl relative py-16 overflow-hidden">
           <div className="bg-gradient-to-br from-[#B7FA36]/0 from-40% to-[#B7FA36] opacity-50 absolute w-full h-full inset-0"></div>
           <div className="w-full h-full absolute z-[999] inset-0 ">
             <img src={bgflim} alt="" className="w-full h-full object-cover" />

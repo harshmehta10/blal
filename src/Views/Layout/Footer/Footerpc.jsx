@@ -68,7 +68,7 @@ const Footerpc = () => {
   ];
   return (
     <div>
-      <footer className=" mx-auto py-5 lg:px-8 ">
+      <footer className=" mx-auto pt-20 pb-2.5 lg:px-8 ">
         <div className="grid grid-cols-5 gap-10">
           <div className="space-y-4">
             {start.map((item, index) => (

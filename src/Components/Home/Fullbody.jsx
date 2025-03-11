@@ -111,7 +111,7 @@ const Fullbody = () => {
   };
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto px-10 py-16 space-y-10 overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto px-10 py-32  space-y-10 overflow-hidden">
         <div className=" flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0">
           <h1 className="font-inter font-medium text-xl lg:text-[40px] text-[#004039] ">
             Full Body Checkup Packages
@@ -148,16 +148,16 @@ const Fullbody = () => {
             )}
           </div>
         </div>
-        <div className="flex gap-5">
+        <div className="flex justify-between gap-5">
           {Checkup.map((item, index) => (
             <div
               key={index}
-              tabIndex={0} // Makes the div focusable
+              // tabIndex={0} // Makes the div focusable
               onMouseEnter={() => setFocusedIndex(index)}
               onMouseLeave={() => setFocusedIndex(null)}
               onFocus={() => setFocusedIndex(index)}
               onBlur={() => setFocusedIndex(null)}
-              className={`rounded-[12px] border transition-all duration-300 transform overflow-hidden ${
+              className={`max-w-md rounded-xl transition-all duration-300 transform overflow-hidden ${
                 focusedIndex === index
                   ? "scale-105"
                   : focusedIndex !== null
@@ -165,14 +165,22 @@ const Fullbody = () => {
                   : ""
               }`}
             >
-              <div className="relative bg-[#F1F6EE] w-[440px]">
-                <img src={vector} alt="" className="absolute inset-8 left-14" />
-                <div className="relative z-[999] h-[250px]">
-                  <img src={item.icon} alt="" className="absolute top-5" />
+              <div className="relative bg-[#F1F6EE]  lg:h-[210px] xl:h-[250px] border border-[#00000014] border-b-0 rounded-t-xl overflow-hidden">
+                <img
+                  src={vector}
+                  alt="vector"
+                  className="absolute inset-0 left-1/2 -translate-x-1/2"
+                />
+                <div className="h-[250px] rounded-t-xl">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    className="absolute left-1/2 -translate-x-1/2 top-8 "
+                  />
                 </div>
               </div>
               <div className="bg-[#01635A] py-6 space-y-6 rounded-b-[12px] px-4 relative z-[999]">
-                <div className="space-y-6">
+                <div className="space-y-2">
                   <div className="flex justify-between">
                     <h1 className="font-inter text-white text-base font-medium">
                       {item.title}
@@ -199,7 +207,7 @@ const Fullbody = () => {
                   </div>
                 </div>
                 <div className="space-y-5">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between gap-6">
                     <div className="flex px-2.5 py-2 gap-2.5 border border-white rounded-lg group">
                       <button className="text-white font-inter text-base font-medium">
                         {item.btn}
@@ -227,7 +235,7 @@ const Fullbody = () => {
           ))}
         </div>
         <div className="relative flex items-center justify-center">
-          <button className="bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 py-4 px-8 text-white font-medium rounded-xl cursor-pointer">
+          <button className="bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 py-4 px-8 text-white font-inter font-medium rounded-xl cursor-pointer">
             View All Packages
           </button>
 

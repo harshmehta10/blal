@@ -62,7 +62,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="max-w-screen-2xl mx-auto border border-[#DADADA] py-4 px-12">
+      <div className="max-w-screen-2xl mx-auto  py-4 px-12">
         <nav className="flex justify-between items-center">
           <div className="flex gap-9 items-center">
             <Link to="/">
