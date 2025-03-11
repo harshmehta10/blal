@@ -148,7 +148,7 @@ const Fullbody = () => {
             )}
           </div>
         </div>
-        <div className="flex justify-between gap-5">
+        <div className="flex justify-between gap-5 h-full">
           {Checkup.map((item, index) => (
             <div
               key={index}
@@ -157,7 +157,7 @@ const Fullbody = () => {
               onMouseLeave={() => setFocusedIndex(null)}
               onFocus={() => setFocusedIndex(index)}
               onBlur={() => setFocusedIndex(null)}
-              className={`max-w-md rounded-xl transition-all duration-300 transform overflow-hidden ${
+              className={`max-w-md h-full rounded-xl transition-all duration-300 transform overflow-hidden ${
                 focusedIndex === index
                   ? "scale-105"
                   : focusedIndex !== null
@@ -209,7 +209,7 @@ const Fullbody = () => {
                 <div className="space-y-5">
                   <div className="flex justify-between gap-6">
                     <div className="flex px-2.5 py-2 gap-2.5 border border-white rounded-lg group">
-                      <button className="text-white font-inter text-base font-medium">
+                      <button className="text-white font-inter lg:text-sm xl:text-base font-medium">
                         {item.btn}
                       </button>
                       <img
@@ -219,7 +219,7 @@ const Fullbody = () => {
                       />
                     </div>
                     <div className="flex gap-2.5 bg-[#68B92E] rounded-[8px] py-2 px-5 items-center group">
-                      <button className="font-inter font-medium text-white text-base">
+                      <button className="font-inter font-medium text-white lg:text-sm xl:text-base">
                         {item.cart}
                       </button>
                       <img
