@@ -4,14 +4,10 @@ import vital from "../../assets/Svg/vitalpackage.svg";
 import complete from "../../assets/Svg/completepackage.svg";
 import premium from "../../assets/Svg/premiumpackage.svg";
 import arrowright from "../../assets/Svg/rightwhitearr.svg";
-
 import vector from "../../assets/Svg/vector.svg";
 import dot from "../../assets/Svg/dot.svg";
-import prev from "../../assets/Svg/prev.svg";
-import next from "../../assets/Svg/next.svg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 
 const Fullbody = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -113,10 +109,19 @@ const Fullbody = () => {
     <>
       <div className="max-w-screen-2xl mx-auto px-10 py-32  space-y-10 overflow-hidden">
         <div className=" flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0">
-          <h1 className="font-inter font-medium text-xl lg:text-[40px] text-[#004039] ">
+          <h1
+            className="font-inter font-medium text-xl lg:text-[40px] text-[#004039]"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
             Full Body Checkup Packages
           </h1>
-          <div className="relative inline-block z-[999]" ref={dropdownRef}>
+          <div
+            className="relative inline-block z-[999]"
+            ref={dropdownRef}
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <div
               className="flex border border-[#004039] py-3 px-4 rounded-[8px] lg:gap-5 justify-between cursor-pointer"
               onClick={toggleDropdown}
@@ -148,7 +153,7 @@ const Fullbody = () => {
             )}
           </div>
         </div>
-        <div className="flex justify-between gap-5 h-full">
+        <div className="flex flex-col lg:flex-row justify-between gap-5 h-full">
           {Checkup.map((item, index) => (
             <div
               key={index}
@@ -157,7 +162,7 @@ const Fullbody = () => {
               onMouseLeave={() => setFocusedIndex(null)}
               onFocus={() => setFocusedIndex(index)}
               onBlur={() => setFocusedIndex(null)}
-              className={`max-w-md h-full rounded-xl transition-all duration-300 transform overflow-hidden ${
+              className={`max-w-md h-full rounded-xl transition-all duration-300 transform overflow-hidden cursor-pointer ${
                 focusedIndex === index
                   ? "scale-105"
                   : focusedIndex !== null
@@ -182,14 +187,14 @@ const Fullbody = () => {
               <div className="bg-[#01635A] py-6 space-y-6 rounded-b-[12px] px-4 relative z-[999]">
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <h1 className="font-inter text-white text-base font-medium">
+                    <h1 className="font-inter text-white text-sm lg:text-base font-medium">
                       {item.title}
                     </h1>
                     <div className="flex gap-2">
-                      <p className="font-inter font-semibold text-base text-white opacity-50 line-through">
+                      <p className="font-inter font-semibold text-sm lg:text-base text-white opacity-50 line-through">
                         {item.beforeprice}
                       </p>
-                      <p className="font-inter font-semibold text-base text-white">
+                      <p className="font-inter font-semibold text-sm lg:text-base text-white">
                         {item.afterprice}
                       </p>
                     </div>
@@ -197,35 +202,35 @@ const Fullbody = () => {
                   <div className="flex justify-between">
                     <div className="flex gap-2 items-center">
                       <img src={item.bullet} alt="" />
-                      <p className="text-[#E1FBA6] text-base font-inter font-normal">
+                      <p className="text-[#E1FBA6] text-sm lg:text-base font-inter font-normal">
                         {item.para}
                       </p>
                     </div>
-                    <p className="text-[#E1FBA6] text-xs border border-[#E1FBA6] py-1 px-2 rounded-[8px]">
+                    <p className="text-[#E1FBA6] text-xs border border-[#E1FBA6] py-1 px-2 rounded-[8px] font-inter">
                       {item.discount}
                     </p>
                   </div>
                 </div>
                 <div className="space-y-5">
                   <div className="flex justify-between gap-6">
-                    <div className="flex px-2.5 py-2 gap-2.5 border border-white rounded-lg group">
-                      <button className="text-white font-inter lg:text-sm xl:text-base font-medium">
+                    <div className="flex px-2.5 py-2 gap-2.5 border border-white rounded-lg group cursor-pointer">
+                      <button className=" text-white font-inter text-xs lg:text-sm xl:text-base font-medium cursor-pointer ">
                         {item.btn}
                       </button>
                       <img
                         src={item.arrow}
                         alt="arrow"
-                        className="group-hover:translate-x-0.5 transition-all duration-300"
+                        className="group-hover:translate-x-0.5 transition-all duration-300 cursor-pointer"
                       />
                     </div>
-                    <div className="flex gap-2.5 bg-[#68B92E] rounded-[8px] py-2 px-5 items-center group">
-                      <button className="font-inter font-medium text-white lg:text-sm xl:text-base">
+                    <div className="flex gap-2.5 btn1 rounded-lg py-2 px-5 items-center group cursor-pointer">
+                      <button className="font-inter font-medium text-white text-xs lg:text-sm xl:text-base cursor-pointer">
                         {item.cart}
                       </button>
                       <img
                         src={item.arrow}
                         alt="arrow"
-                        className="group-hover:translate-x-1 transition-all duration-300"
+                        className="group-hover:translate-x-1 transition-all duration-300 cursor-pointer"
                       />
                     </div>
                   </div>
@@ -235,7 +240,7 @@ const Fullbody = () => {
           ))}
         </div>
         <div className="relative flex items-center justify-center">
-          <button className="bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 py-4 px-8 text-white font-inter font-medium rounded-xl cursor-pointer">
+          <button className=" btn1 hover:!bg-[#01635A] transition-colors duration-500 py-4 px-8 font-inter rounded-xl cursor-pointer">
             View All Packages
           </button>
 

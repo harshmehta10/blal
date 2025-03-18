@@ -6,8 +6,8 @@ import clock from "../../assets/Svg/whiteclock.svg";
 
 const Hero = () => {
   return (
-    <div>
-      <div className="max-w-screen-2xl mx-auto py-8 lg:py-12 px-6 lg:px-12 bg-[#01635A] relative overflow-hidden">
+    <div className="bg-[#01635A]">
+      <div className="max-w-screen-2xl mx-auto py-8 lg:py-12 px-6 lg:px-12  relative overflow-hidden">
         <div className="flex  flex-col lg:flex-row  items-center pt-5">
           <div className="space-y-7 flex flex-col justify-center lg:w-[70%]">
             <h1 className="text-white font-inter font-semibold text-2xl md:text-3xl lg:text-5xl ">

@@ -25,7 +25,7 @@ const Fullbody = () => {
   ];
   return (
     <div>
-      <div className="bg-gradient-to-b from-[#01635A] to-[#3B9D00] px-6 py-5 rounded-xl">
+      <div className="bg-gradient-to-b from-[#01635A] to-[#3B9D00] px-6 py-5 rounded-xl cursor-pointer">
         {body.map((item, index) => (
           <div key={index} className="space-y-5">
             <div className="flex justify-between">
@@ -44,7 +44,7 @@ const Fullbody = () => {
                   </p>
                 </div>
                 <div>
-                  <p className="border border-[#E1FBA6] text-[#E1FBA6] px-2 py-1 rounded-lg bg-[#FFFFFF1A]">
+                  <p className="border border-[#E1FBA6] text-[#E1FBA6] px-2 py-1 rounded-lg bg-[#FFFFFF1A] font-inter">
                     {item.discount}
                   </p>
                 </div>
@@ -75,7 +75,7 @@ const Fullbody = () => {
               <button className="border border-[#F6F6F6] text-white py-2 px-4.5 font-inter font-medium text-sm rounded-xl">
                 View Test Details
               </button>
-              <button className="bg-[#46BB00]  text-white font-inter font-medium text-sm py-2 px-3.5 rounded-xl">
+              <button className="btn1  text-white font-inter font-medium text-sm py-2 px-3.5 rounded-xl">
                 Add to Cart
               </button>
             </div>

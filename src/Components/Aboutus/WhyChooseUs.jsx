@@ -6,27 +6,19 @@ const WhyChooseUs = () => {
   return (
     <div className="max-w-screen-2xl mx-auto px-12 py-12">
       {/* Main row: left image(s) + right text */}
-      <div className="flex items-center justify-between gap-8">
+      <div className="flex items-center justify-between gap-28">
         {/* LEFT SIDE: Doctor image with background shape */}
-        <div className="relative w-3/4 h-[500px]">
+        <div className="relative w-1/2 ">
           {/* The SVG shape behind */}
-          <img
-            src={bg}
-            alt="background shape"
-            className="absolute top-24 -left-10 w-full h-[80%] "
-          />
+
           {/* The doctor image in front */}
-          <img
-            src={doc}
-            alt="doctor"
-            className="absolute -top-1 left-3 w-[95%] h-full object-contain"
-          />
+          <img src={doc} alt="doctor" className=" w-full h-full " />
         </div>
 
         {/* RIGHT SIDE: Heading, paragraph, and button */}
-        <div className="max-w-[590px] space-y-6">
+        <div className=" space-y-6 w-1/2">
           <h1 className="font-inter font-medium text-40">Why Choose Us?</h1>
-          <p className="font-inter text-[#97979A] font-normal text-sm lg:text-base leading-relaxed">
+          <p className="font-inter text-[#97979A] font-normal text-sm lg:text-base leading-relaxed max-w-[590px]">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet,
             consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

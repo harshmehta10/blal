@@ -17,17 +17,42 @@ const TestbyMedical = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 6, // Adjusted for two items; update if you add more tests
     slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 0,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 0,
         },
       },
       {
@@ -61,8 +86,12 @@ const TestbyMedical = () => {
   ];
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-8 py-7 overflow-x-hidden space-y-5">
-      <h1 className="text-[#004039] font-inter font-medium text-40">
+    <div className="max-w-screen-2xl mx-auto px-8 py-20 overflow-x-hidden space-y-14">
+      <h1
+        className="text-[#004039] font-inter font-medium text-40"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
         Tests by Medical Conditions
       </h1>
       <div className="mt-8">
@@ -86,7 +115,7 @@ const TestbyMedical = () => {
               <div
                 className={`${
                   index % 2 === 0 ? "py-5 px-8.5" : "py-7.5 px-8.5"
-                } bg-[#F1F6EE] border border-[#DEE2DB] flex flex-col items-center justify-center rounded-xl`}
+                } bg-[#F1F6EE] border border-[#DEE2DB] flex flex-col items-center justify-center rounded-xl cursor-pointer`}
               >
                 <img
                   src={testItem.image}
@@ -110,7 +139,7 @@ const TestbyMedical = () => {
             window.scrollTo({ top: 0, left: 0, behavior: "instant" })
           }
         >
-          <button className="bg-gradient-to-b from-[#46BB00] to-[#3B9D00]  hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 py-4 px-8 text-white font-medium rounded-xl cursor-pointer">
+          <button className="btn1 hover:!bg-[#01635A] transition-colors duration-500 py-4 px-8 font-inter rounded-xl cursor-pointer">
             View All Tests
           </button>
         </Link>

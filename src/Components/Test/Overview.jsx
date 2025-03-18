@@ -121,7 +121,7 @@ const Overview = () => {
           <div
             id="car"
             ref={ref}
-            className="flex items-center space-x-3 overflow-auto"
+            className="flex items-center space-x-3 overflow-auto cursor-pointer"
           >
             {items.map((item, index) => (
               <Item key={item} item={item} selected={index === step} />

@@ -20,7 +20,7 @@ const Faq = () => {
             Frequently Asked Questions
           </h1>
         </div>
-        <div className="space-y-6 w-auto lg:w-[1054px] mx-auto">
+        <div className="space-y-6 w-full lg:w-[80%] mx-auto">
           {Questions.map((item, index) => (
             <div
               key={index}
@@ -31,7 +31,7 @@ const Faq = () => {
               }`}
             >
               <div
-                className="flex items-center gap-5 lg:justify-between cursor-pointer"
+                className="flex items-center gap-5 justify-between cursor-pointer"
                 onClick={() => toggleQuestion(index)}
               >
                 <h1

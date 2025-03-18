@@ -40,18 +40,22 @@ const Blogs = () => {
     <>
       <div className="max-w-screen-2xl mx-auto px-8 py-7 space-y-14">
         <div className="flex flex-col items-center justify-center space-y-14 ">
-          <h1 className="text-[#004039] font-inter font-medium text-40 text-center max-w-[766px]">
+          <h1
+            className="text-[#004039] font-inter font-medium text-40 text-center max-w-[766px]"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
             Blogs ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod
           </h1>
           <div className="flex justify-center gap-3">
-            <button className="text-[#E1FBA6] text-xs lg:text-base font-inter font-normal px-4 py-3 rounded-lg bg-[#01635A]">
+            <button className="text-[#E1FBA6] text-xs lg:text-base font-inter font-normal px-4 py-3 rounded-lg bg-[#01635A] cursor-pointer">
               Recent
             </button>
-            <button className="text-[#1E1E2F] text-xs lg:text-base font-inter font-normal px-4 py-3 rounded-lg border border-[#004039]">
+            <button className="text-[#1E1E2F] text-xs lg:text-base font-inter font-normal px-4 py-3 rounded-lg border border-[#004039] cursor-pointer">
               Most Popular
             </button>
-            <button className="text-[#1E1E2F] text-xs lg:text-base font-inter font-normal px-4 py-3 rounded-lg border border-[#004039]">
+            <button className="text-[#1E1E2F] text-xs lg:text-base font-inter font-normal px-4 py-3 rounded-lg border border-[#004039] cursor-pointer">
               Trending
             </button>
           </div>
@@ -66,7 +70,7 @@ const Blogs = () => {
                   className="object-cover w-full rounded-t-xl"
                 />
               </div>
-              <div className="border border-black space-y-5 py-5 px-4 rounded-b-xl shadow-xl">
+              <div className="border border-[#00000014] space-y-5 py-5 px-4 rounded-b-xl shadow-xl">
                 <h1 className="font-inter text-[#1E1E2F] font-medium text-base">
                   {item.title}
                 </h1>
@@ -89,7 +93,7 @@ const Blogs = () => {
           ))}
         </div>
         <div className=" flex justify-center">
-          <button className=" bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500   text-white font-inter font-medium text-base py-4 px-8 rounded-xl cursor-pointer">
+          <button className="btn1  hover:!bg-[#01635A] transition-all duration-500 font-inter text-base py-4 px-8 rounded-xl cursor-pointer">
             <p>View All Blogs</p>
           </button>
         </div>

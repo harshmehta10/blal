@@ -87,13 +87,13 @@ const Header = () => {
                 />
               </div>
               {stateDropdownOpen && (
-                <div className="absolute z-10 mt-2 w-40 bg-white rounded-md shadow-lg">
+                <div className="absolute z-50 mt-2 w-40 bg-white rounded-md shadow-lg">
                   <div className="py-1">
                     {states.map((state, index) => (
                       <div
                         key={index}
                         onClick={() => handleStateClick(state)}
-                        className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                        className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer font-inter"
                       >
                         {state}
                       </div>

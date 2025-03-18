@@ -4,8 +4,8 @@ import mag from "../../assets/Svg/magni.svg";
 
 const Hero = () => {
   return (
-    <div>
-      <div className="max-w-screen-2xl mx-auto py-4 px-8 lg:px-12 bg-[#01635A] h-[600px] flex items-center relative overflow-hidden">
+    <div className="bg-[#01635A]">
+      <div className="max-w-screen-2xl mx-auto py-4 px-8 lg:px-12  h-[600px] flex items-center relative overflow-hidden">
         <div className="flex  flex-col lg:flex-row ">
           <div className="space-y-7">
             <div className="space-y-7">
@@ -47,7 +47,7 @@ const Hero = () => {
               <img src={mag} alt="" className="px-2" />
               <input
                 type="text"
-                className="bg-transparent py-4 rounded-[75px]  font-inter placeholder-[#C1C1C1] "
+                className="bg-transparent py-4 rounded-[75px]  font-inter placeholder-[#C1C1C1]"
                 placeholder="Lorem ipsum dolor..."
               />
               <button

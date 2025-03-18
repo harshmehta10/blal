@@ -20,12 +20,37 @@ const TestbyBody = () => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 0,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 0,
         },
       },
       {
@@ -79,8 +104,12 @@ const TestbyBody = () => {
   ];
   return (
     <div>
-      <div className="max-w-screen-2xl mx-auto px-8 py-7 overflow-x-hidden space-y-5">
-        <h1 className="text-[#004039] font-inter font-medium text-40">
+      <div className="max-w-screen-2xl mx-auto px-8 py-20 overflow-x-hidden space-y-14">
+        <h1
+          className="text-[#004039] font-inter font-medium text-40"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           Tests by Body Parts
         </h1>
         <div className="">
@@ -102,18 +131,18 @@ const TestbyBody = () => {
                 }`}
               >
                 <div
-                  className={` ${
-                    index % 2 === 0 ? "py-7.5 px-8.5 " : "py-7 px-8.5"
-                  } bg-[#F1F6EE] border border-[#DEE2DB]  flex flex-col items-center justify-center rounded-xl`}
+                  className="
+                    py-9 px-8.5
+                   bg-[#F1F6EE] border border-[#DEE2DB]  flex flex-col items-center justify-center rounded-xl cursor-pointer"
                 >
-                  <img
-                    src={testItem.icon}
-                    alt={testItem.para}
-                    className={`${
-                      index % 2 === 0 ? "px-6 py-6 " : "px-9 py-7.5"
-                    } bg-gradient-to-b to-[#E1F1D600] from-[#AED495] rounded-[198px]`}
-                  />
-                  <h1 className="font-inter font-normal text-xl mt-4">
+                  <div className="bg-gradient-to-b to-[#E1F1D600] from-[#AED495] size-32 rounded-full flex justify-center items-center">
+                    <img
+                      src={testItem.icon}
+                      alt={testItem.para}
+                      className="size-20"
+                    />
+                  </div>
+                  <h1 className="font-inter font-normal  lg:text-lg xl:text-xl mt-4">
                     {testItem.para}
                   </h1>
                 </div>
@@ -128,7 +157,7 @@ const TestbyBody = () => {
               window.scrollTo({ top: 0, left: 0, behavior: "instant" })
             }
           >
-            <button className="bg-gradient-to-b from-[#46BB00] to-[#3B9D00] hover:from-[#01635A] hover:to-[#01635A] transition-colors duration-500 py-4 px-8 text-white font-medium rounded-xl cursor-pointer">
+            <button className="btn1 hover:!bg-[#01635A] transition-colors duration-500 py-4 px-8 text-white font-inter font-medium rounded-xl cursor-pointer">
               View All Tests
             </button>
           </Link>

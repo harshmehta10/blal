@@ -9,9 +9,11 @@ import patient2 from "../../assets/Svg/patient2.svg";
 import patient3 from "../../assets/Svg/patient3.svg";
 import prev from "../../assets/Svg/prevblack.svg";
 import next from "../../assets/Svg/nextblack.svg";
+import doc1 from "../../assets/images/homedoc1.jpg";
+import doc2 from "../../assets/images/homedoc2.jpg";
 
 const WhyChooseus = () => {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const us = [1, 2, 3, 4, 5, 6, 7, 8];
   const patient = [
     {
@@ -30,6 +32,7 @@ const WhyChooseus = () => {
       para: "Lorem ipsum dolor sit amet, consectetur adipiscing",
     },
   ];
+  const doctor = [mac, doc1, doc2];
   return (
     <div className="bg-[#F9F9F9]">
       <div className="max-w-screen-2xl mx-auto px-8 py-8 overflow-hidden space-y-20">
@@ -44,8 +47,13 @@ const WhyChooseus = () => {
               consectetur adipiscing elit elit sed do eiusmod.
             </p>
           </div>
-          <div className="flex flex-col lg:flex-row justify-between items-center w-full">
-            <div className="space-y-6  ">
+          <div className="flex flex-col lg:flex-row justify-between w-full gap-10">
+            {/* First Child */}
+            <div
+              className="flex-1 space-y-6 flex flex-col justify-between lg:w-1/3 order-last lg:order-first"
+              data-aos="fade-down"
+              data-aos-duration="1200"
+            >
               {patient.map((item, index) => (
                 <div
                   key={index}
@@ -68,20 +76,16 @@ const WhyChooseus = () => {
                 </div>
               ))}
             </div>
-            <div className="relative ">
-              <img src={mac} alt="macbook" />
-              <div className="flex absolute bottom-5 right-5 gap-5">
+
+            {/* Doctor Image */}
+            <div className="relative flex lg:w-2/3 order-first lg:order-last h-[450px]">
+              {doctor[selectedIndex] && (
                 <img
-                  src={prev}
-                  alt=""
-                  className="px-1.5 lg:px-2.5 py-3 lg:py-4 rounded-full bg-white"
+                  src={doctor[selectedIndex]}
+                  alt="Doctor"
+                  className="w-full h-full object-cover rounded-2xl "
                 />
-                <img
-                  src={next}
-                  alt=""
-                  className="px-1.5 lg:px-2.5 py-3 lg:py-4 rounded-full bg-white"
-                />
-              </div>
+              )}
             </div>
           </div>
         </div>
@@ -114,29 +118,33 @@ const WhyChooseus = () => {
                       className="py-4 px-4 rounded-full bg-white/20"
                     />
                     <div>
-                      <h1 className="text-[#E1FBA6] text-sm lg:text-base">
+                      <h1 className="text-[#E1FBA6] font-inter text-sm lg:text-base max-w-[128px] whitespace-nowrap">
                         Lorem Ipsum dolor
                       </h1>
-                      <p className="text-white text-sm lg:text-base">
+                      <p className="text-white font-inter text-sm lg:text-base whitespace-nowrap">
                         iSit amet quis alqn
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="bg-[#68B92E] flex gap-2 lg:gap-2.5 px-6 lg:px-8 py-4 rounded-xl w-[250px] lg:w-[287px] relative z-50 ">
+              <div className="bg-[#68B92E] cursor-pointer flex gap-2 lg:gap-2.5 px-6 lg:px-8 py-4 rounded-xl w-[250px] lg:w-[287px] relative z-50 ">
                 <img src={whatsapp} alt="whatsapp logo" />
-                <button className="text-white font-inter font-medium text-sm lg:text-base">
+                <button className="text-white font-inter font-medium text-sm lg:text-base cursor-pointer">
                   Contact us on Whatsapp
                 </button>
               </div>
             </div>
 
-            <div className="relative z-[999] w-full h-[300px] lg:h-auto  ">
+            <div
+              className="relative z-[999] w-full h-[300px] lg:h-auto"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
               <img
                 src={chooseus}
                 alt=""
-                className="absolute -left-40 lg:-left-40 top-10 lg:top-8 max-h-none max-w-none  h-[300px] lg:h-auto "
+                className="absolute -left-40 lg:-left-40 xl:-left-24 top-10 lg:top-8  max-h-none max-w-none  h-[300px] lg:h-auto "
               />
             </div>
           </div>

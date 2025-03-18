@@ -19,9 +19,9 @@ const Home = () => {
       <Mostpopular />
       <AddMember />
       <TestbyMedical />
-      <TestbyBody />
       <OurPath />
       <WhyChooseus />
+      <TestbyBody />
       <Blogs />
       <Cantfind />
       <Faq />

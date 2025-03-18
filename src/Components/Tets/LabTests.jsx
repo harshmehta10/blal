@@ -23,20 +23,22 @@ const LabTests = () => {
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Left Sidebar: Filters */}
         <div className="w-full lg:w-1/4 bg-white border rounded-md p-4 h-1/2 space-y-5">
-          <h2 className="text-xl font-semibold mb-4">Filters</h2>
+          <h2 className="text-xl font-semibold mb-4 font-inter">Filters</h2>
 
           {/* Search box */}
           <div className="mb-4">
             <input
               type="text"
               placeholder="Search Tests, Checkups..."
-              className="w-full px-3 py-2 border rounded focus:outline-none"
+              className="w-full px-3 py-2 border rounded focus:outline-none font-inter"
             />
           </div>
 
           {/* Body Parts */}
           <div className="">
-            <h3 className="text-base font-medium mb-2">Body Parts</h3>
+            <h3 className="text-base font-medium mb-2 font-inter">
+              Body Parts
+            </h3>
             <div className="overflow-y-scroll custom-scrollbar max-h-48">
               <div className="flex items-center mb-2 gap-2">
                 <input type="checkbox" id="heart1" className="bg-[#01635A]" />
@@ -142,7 +144,9 @@ const LabTests = () => {
 
           {/* Health Conditions */}
           <div className="">
-            <h3 className="text-md font-medium mb-2">Health Conditions</h3>
+            <h3 className="text-md font-medium mb-2 font-inter">
+              Health Conditions
+            </h3>
             <div className="overflow-y-scroll custom-scrollbar max-h-48">
               <div className="flex items-center mb-2">
                 <input type="checkbox" id="autoimmune" className="mr-2" />
@@ -184,7 +188,7 @@ const LabTests = () => {
                 <input
                   type="checkbox"
                   id="infectious1"
-                  className="mr-2 border border-[#DEE2DB]"
+                  className="mr-2 border border-[#DEE2DB] font-inter"
                 />
                 <label
                   htmlFor="infectious"
@@ -197,7 +201,7 @@ const LabTests = () => {
                 <input
                   type="checkbox"
                   id="infectious2"
-                  className="mr-2 border border-[#DEE2DB]"
+                  className="mr-2 border border-[#DEE2DB] "
                 />
                 <label
                   htmlFor="infectious"
@@ -225,7 +229,7 @@ const LabTests = () => {
 
         {/* Main Content: Lab Tests + Cards + Pagination */}
         <div className="flex-1">
-          <h2 className="text-2xl font-semibold">Lab Tests</h2>
+          <h2 className="text-2xl font-semibold font-inter">Lab Tests</h2>
           <p className="text-gray-500">
             Showing {(currentPage - 1) * itemsPerPage + 1}-
             {Math.min(currentPage * itemsPerPage, totalTests)} of {totalTests}{" "}
@@ -264,7 +268,7 @@ const LabTests = () => {
                 onClick={() => setCurrentPage(index + 1)}
                 className={`px-3 py-1 rounded ${
                   currentPage === index + 1
-                    ? "bg-green-500 text-white"
+                    ? "bg-green-500 text-white font-inter"
                     : "bg-gray-200"
                 }`}
               >

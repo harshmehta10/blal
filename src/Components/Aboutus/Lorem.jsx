@@ -12,7 +12,7 @@ const Lorem = () => {
           </div>
           <div className="space-y-8 max-w-2xl pt-4">
             <div>
-              <p className="text-[#97979A] text-sm lg:text-base">
+              <p className="text-[#97979A] text-sm lg:text-base font-inter">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatu Lorem ipsum dolor sit
                 amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -22,16 +22,16 @@ const Lorem = () => {
               </p>
             </div>
             <div className="space-y-4">
-              <h1 className="text-[#46B902] text-base">Lorem Ipsum</h1>
-              <p className="text-[#97979A] text-sm lg:text-base">
+              <h1 className="text-[#46B902] text-base font-inter">Lorem Ipsum</h1>
+              <p className="text-[#97979A] text-sm lg:text-base font-inter">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatu Lorem ipsum dolor sit
                 amet, consectetur adipiscing elit
               </p>
             </div>
             <div className="space-y-4">
-              <h1 className="text-[#46B902]">Lorem Ipsum</h1>
-              <p className="text-[#97979A] text-sm lg:text-base">
+              <h1 className="text-[#46B902] font-inter">Lorem Ipsum</h1>
+              <p className="text-[#97979A] text-sm lg:text-base font-inter">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatu Lorem ipsum dolor sit
                 amet, consectetur adipiscing elit

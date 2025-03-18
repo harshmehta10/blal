@@ -16,18 +16,22 @@ const Cantfind = () => {
           <div className="flex flex-col lg:flex-row  items-center ">
             <div className="font-inter space-y-9 lg:w-[70%]">
               <div className="space-y-5">
-                <h1 className="font-medium text-2xl lg:text-[40px] text-white">
+                <h1 className="font-inter font-medium text-2xl lg:text-[40px] text-white">
                   Can’t find what you’re looking for?
                 </h1>
-                <p className="font-normal text-sm lg:text-base text-white  lg:max-w-[641px]">
+                <p className="font-inter font-normal text-sm lg:text-base text-white  lg:max-w-[641px]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore Lorem ipsum dolor sit
                   amet, consectetur{" "}
                 </p>
               </div>
-              <div className="bg-[#68B92E] flex gap-2.5 px-8 py-4 rounded-xl w-[287px]">
-                <img src={whatsapp} alt="whatsapp logo" />
-                <button className="text-white font-inter font-medium text-sm lg:text-base">
+              <div className="bg-[#68B92E] flex gap-2.5 px-8 py-4 rounded-xl w-[287px] cursor-pointer relative z-[999]">
+                <img
+                  src={whatsapp}
+                  alt="whatsapp logo"
+                  className="cursor-pointer"
+                />
+                <button className="text-white font-inter font-medium text-sm lg:text-base cursor-pointer">
                   Contact us on Whatsapp
                 </button>
               </div>

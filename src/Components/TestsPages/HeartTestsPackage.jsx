@@ -152,7 +152,7 @@ const HeartTestsPackage = () => {
                         {item.afterprice}
                       </p>
                     </div>
-                    <p className="border border-[#E1FBA6] text-[#E1FBA6] px-2 py-1 rounded-lg bg-[#FFFFFF1A] inline-block text-xs">
+                    <p className="border border-[#E1FBA6] text-[#E1FBA6] px-2 py-1 rounded-lg bg-[#FFFFFF1A] inline-block text-xs font-inter">
                       {item.discount}
                     </p>
                   </div>
@@ -199,7 +199,7 @@ const HeartTestsPackage = () => {
 
         {/* "View All Tests" button at the bottom */}
         <div className="flex justify-center">
-          <button className="bg-[#46BB00] text-white font-inter font-medium text-sm py-3 px-6 rounded-xl">
+          <button className="btn1 text-white font-inter font-medium text-sm py-3 px-6 rounded-xl cursor-pointer">
             View All Tests
           </button>
         </div>
